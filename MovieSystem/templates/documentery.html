@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Lovers Documentaries</title>
+  
+    <link rel="stylesheet" href="static\css\cinemaProject.css">
+    <link rel="stylesheet" href="static\css\footer.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Roboto:wght@300;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="nav-bar">
+            <div class="company-title-div">
+                <span class="outter"><a href="index.html"><img src="static\images\logonew1 black.png" alt="company name logo" class="title-logo"></a></span>
+            </div>
+
+            <span class="hamburger-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </span>
+
+            <div class="navigation-links-div">
+                <ul>
+                    <li><a href="{% url 'home' %}">Movies</a></li>
+                    <li><a href="{% url 'series' %}">Series</a></li>
+                    <li><a href="{% url 'documentery' %}">Documentaries</a></li>
+                    {% if user.is_authenticated %}
+                    <li>
+                        <!-- Hidden form that will handle the POST logout -->
+                        <form id="logout-form" action="{% url 'logout' %}" method="post" style="display: none;">
+                            {% csrf_token %}
+                        </form>
+                        <!-- A text link that triggers the form submission via JavaScript -->
+                        <a href="#" onclick="if(confirm('Are you sure you want to sign out?')) { document.getElementById('logout-form').submit(); } return false;">
+                            Signout
+                        </a>
+                    </li>
+                {% endif %}
+                </ul>
+             
+            </div>
+            {% comment %} <div class="navigation-links-div">
+                <ul>
+                    <li><a href="{% url 'home' %}">Movies</a></li>
+                    <li><a href="{% url 'series' %}">Series</a></li>
+                    <li><a href="{% url 'documentery' %}">Documentaries</a></li>
+                    <li><a href="{% url 'login' %}">Login</a></li>
+                </ul>
+            </div> {% endcomment %}
+        </nav>
+    </header>
+
+
+    
+    <section class="first-section" id="firstSectionID">
+
+        <div class="first-section-div">
+            <div class="card-wrapper">
+                <div class="top-card">
+                    <a href="https://hdtoday.tv/watch-movie/watch-jinkx-monsoon-red-head-redemption-hd-94138.9442429"><img src="https://m.media-amazon.com/images/M/MV5BOGUwZjMyMDktMmUyYi00YTBjLTk0OWItMzgxZjBlM2E3OTE4XkEyXkFqcGdeQXVyMTEyOTg3NTYw._V1_FMjpg_UX1000_.jpg" alt="Documentary title picture"></a>
+                </div>
+                <div class="bottom-card">
+                    <div class="card-title-name">
+                        <h3>Jinkx Monsoon: Red Head Redemption</h3>
+                    </div>
+                    <div class="card-information">
+                        <div class="card-year"><p>2023</p></div>
+                        <div class="card-duration"><p>72m</p></div>
+                        <div class="card-type"><p>Movie</p></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-wrapper">
+                <div class="top-card">
+                    <a href="https://hdtoday.tv/watch-tv/watch-boom-boom-the-world-vs-boris-becker-hd-94963.9519166"><img src="https://upload.wikimedia.org/wikipedia/en/thumb/2/2f/Boom_boom_the_world_vs_boris_becker.png/220px-Boom_boom_the_world_vs_boris_becker.png" alt="Documentary title picture"></a>
+                </div>
+                <div class="bottom-card">
+                    <div class="card-title-name">
+                        <h3>Boom! Boom! The World vs. Boris Becker</h3>
+                    </div>
+                    <div class="card-information">
+                        <div class="card-year"><p>SS 1</p></div>
+                        <div class="card-duration"><p>EPS 2</p></div>
+                        <div class="card-type"><p>TV</p></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-wrapper">
+                <div class="top-card">
+                    <a href="https://hdtoday.tv/watch-tv/watch-catching-lightning-hd-95041.9521986"><img src="https://m.media-amazon.com/images/M/MV5BMTkxYmM5ODktZTJhZi00ZWVkLWE4NjgtNGVjOWI1ZjU4NjUwXkEyXkFqcGdeQXVyODY0NzcxNw@@._V1_.jpg" alt="Documentary title picture"></a>
+                </div>
+                <div class="bottom-card">
+                    <div class="card-title-name">
+                        <h3>Cathing Lightning</h3>
+                    </div>
+                    <div class="card-information">
+                        <div class="card-year"><p>SS 1</p></div>
+                        <div class="card-duration"><p>EPS 4</p></div>
+                        <div class="card-type"><p>TV</p></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-wrapper">
+                <div class="top-card">
+                    <a href="https://hdtoday.tv/watch-movie/watch-lewis-capaldi-how-im-feeling-now-hd-94885.9522142"><img src="https://media-cache.cinematerial.com/p/500x/s6es0lvz/lewis-capaldi-how-im-feeling-now-thai-movie-poster.jpg?v=1680854212" alt="Documentary title picture"></a>
+                </div>
+                <div class="bottom-card">
+                    <div class="card-title-name">
+                        <h3>Lewis Capaldi: How I'm Feeling Now</h3>
+                    </div>
+                    <div class="card-information">
+                        <div class="card-year"><p>2023</p></div>
+                        <div class="card-duration"><p>96m</p></div>
+                        <div class="card-type"><p>Movie</p></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-wrapper">
+                <div class="top-card">
+                    <a href="https://hdtoday.tv/watch-tv/watch-redefined-jr-smith-hd-95002.9520930"><img src="https://m.media-amazon.com/images/M/MV5BMzVlNDFmNzgtODdhOC00YjRkLTk2OWUtNWM1NGUwNjI0YTY4XkEyXkFqcGdeQXVyMjkwOTAyMDU@._V1_FMjpg_UX1000_.jpg" alt="Documentary title picture"></a>
+                </div>
+                <div class="bottom-card">
+                    <div class="card-title-name">
+                        <h3>Redefined: J.R. Smith</h3>
+                    </div>
+                    <div class="card-information">
+                        <div class="card-year"><p>SS 1</p></div>
+                        <div class="card-duration"><p>EPS 4</p></div>
+                        <div class="card-type"><p>TV</p></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-wrapper">
+                <div class="top-card">
+                    <a href="https://hdtoday.tv/watch-movie/watch-reggie-hd-94492.9481840"><img src="https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/81BCdXZXTcL._RI_.jpg" alt="Documentary title picture"></a>
+                </div>
+                <div class="bottom-card">
+                    <div class="card-title-name">
+                        <h3>Reggie</h3>
+                    </div>
+                    <div class="card-information">
+                        <div class="card-year"><p>2023</p></div>
+                        <div class="card-duration"><p>104m</p></div>
+                        <div class="card-type"><p>Movie</p></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-wrapper">
+                <div class="top-card">
+                    <a href="https://hdtoday.tv/watch-tv/watch-mean-girl-murders-hd-94810.9531916"><img src="https://m.media-amazon.com/images/M/MV5BNjUwZmQ4NTgtMzYzZi00ZTMwLTlhNDYtMjc5ZDQ3YTkyMDBlXkEyXkFqcGdeQXVyNjg0NDU5OTA@._V1_.jpg" alt="Documentary title picture"></a>
+                </div>
+                <div class="bottom-card">
+                    <div class="card-title-name">
+                        <h3>Mean Girl Murders</h3>
+                    </div>
+                    <div class="card-information">
+                        <div class="card-year"><p>SS 1</p></div>
+                        <div class="card-duration"><p>EPS 4</p></div>
+                        <div class="card-type"><p>TV</p></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-wrapper">
+                <div class="top-card">
+                    <a href="https://hdtoday.tv/watch-movie/watch-i-got-a-monster-hd-93754.9410785"><img src="https://m.media-amazon.com/images/M/MV5BZmFjNmJjN2ItZmM2MC00ZTRmLTgyOWQtMTY1NDlmNmU2ZGFjXkEyXkFqcGdeQXVyOTk4NTAwMzQ@._V1_FMjpg_UX1000_.jpg" alt="Documentary title picture"></a>
+                </div>
+                <div class="bottom-card">
+                    <div class="card-title-name">
+                        <h3>I Got A Monster</h3>
+                    </div>
+                    <div class="card-information">
+                        <div class="card-year"><p>2023</p></div>
+                        <div class="card-duration"><p>103m</p></div>
+                        <div class="card-type"><p>Movie</p></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-wrapper">
+                <div class="top-card">
+                    <a href="https://hdtoday.tv/watch-tv/watch-mh370-the-plane-that-disappeared-hd-93934.9422053"><img src="https://m.media-amazon.com/images/M/MV5BNjM5ZjZkMjQtZTJkYi00MzMwLTlmMGMtNjc1NDE0YTQ5NTQ1XkEyXkFqcGdeQXVyMTM1MTY3NTQ1._V1_FMjpg_UX1000_.jpg" alt="Documentary title picture"></a>
+                </div>
+                <div class="bottom-card">
+                    <div class="card-title-name">
+                        <h3>MH370: The Plane That Dissapeared</h3>
+                    </div>
+                    <div class="card-information">
+                        <div class="card-year"><p>SS 1</p></div>
+                        <div class="card-duration"><p>EPS 3</p></div>
+                        <div class="card-type"><p>TV</p></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-wrapper">
+                <div class="top-card">
+                    <a href="https://hdtoday.tv/watch-tv/watch-blood-money-hd-94357.9510766"><img src="https://m.media-amazon.com/images/M/MV5BMDc0NmM3ZDUtOWZhOS00MmJmLThiZTAtODcwZTI0NjJhM2IxXkEyXkFqcGdeQXVyNDExMzMxNjE@._V1_.jpg" alt="Documentary title picture"></a>
+                </div>
+                <div class="bottom-card">
+                    <div class="card-title-name">
+                        <h3>Blood & Money</h3>
+                    </div>
+                    <div class="card-information">
+                        <div class="card-year"><p>SS 1</p></div>
+                        <div class="card-duration"><p>EPS 4</p></div>
+                        <div class="card-type"><p>TV</p></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-wrapper">
+                <div class="top-card">
+                    <a href="https://hdtoday.tv/watch-tv/watch-real-madrid-until-the-end-hd-93997.9427633"><img src="https://m.media-amazon.com/images/M/MV5BNmFjYzBiMWItYTYyMy00NDVkLTgyMWEtM2I4YmYxNjRhZGE1XkEyXkFqcGdeQXVyNTAzNzgwNTg@._V1_FMjpg_UX1000_.jpg" alt="Real Madrid: Until the End Documentary title picture"></a>
+                </div>
+                <div class="bottom-card">
+                    <div class="card-title-name">
+                        <h3>Real Madrid: Until the End</h3>
+                    </div>
+                    <div class="card-information">
+                        <div class="card-year"><p>SS 1</p></div>
+                        <div class="card-duration"><p>EPS 3</p></div>
+                        <div class="card-type"><p>TV</p></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-wrapper">
+                <div class="top-card">
+                    <a href="https://hdtoday.tv/watch-movie/watch-trafficked-hd-94291.9460660"><img src="https://m.media-amazon.com/images/M/MV5BMWQ3MDNiOWYtMWJjMy00YjUwLWE3MjUtMzE5ZjJiNDVjODBjXkEyXkFqcGdeQXVyNTI2MTM5MDY@._V1_FMjpg_UX1000_.jpg" alt="Trafficked Documentary title picture"></a>
+                </div>
+                <div class="bottom-card">
+                    <div class="card-title-name">
+                        <h3>Trafficked</h3>
+                    </div>
+                    <div class="card-information">
+                        <div class="card-year"><p>2023</p></div>
+                        <div class="card-duration"><p>77m</p></div>
+                        <div class="card-type"><p>Movie</p></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-wrapper">
+                <div class="top-card">
+                    <a href="https://hdtoday.tv/watch-movie/watch-fashion-reimagined-hd-94033.9431911"><img src="https://m.media-amazon.com/images/M/MV5BYWJhY2ZlNmMtMjI4ZC00OTAzLTliZTctZTc1ODRiMzE1OTM3XkEyXkFqcGdeQXVyMTU2Njk3Mjk@._V1_FMjpg_UX1000_.jpg" alt="Fashion Reimagined Documentary title picture"></a>
+                </div>
+                <div class="bottom-card">
+                    <div class="card-title-name">
+                        <h3>Fashion Reimagined</h3>
+                    </div>
+                    <div class="card-information">
+                        <div class="card-year"><p>2023</p></div>
+                        <div class="card-duration"><p>100</p></div>
+                        <div class="card-type"><p>Movie</p></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-wrapper">
+                <div class="top-card">
+                    <a href="https://hdtoday.tv/watch-tv/watch-the-flipping-el-moussas-hd-93955.9519061"><img src="https://m.media-amazon.com/images/M/MV5BMTIzZWFlOGQtMzc0Yy00MmE0LTk3ZWItMDQyYjhhMmQzNDQ5XkEyXkFqcGdeQXVyMDAwMDAwMw@@._V1_.jpg" alt="The Flipping El Moussas Documentary title picture"></a>
+                </div>
+                <div class="bottom-card">
+                    <div class="card-title-name">
+                        <h3>The Flipping El Moussas</h3>
+                    </div>
+                    <div class="card-information">
+                        <div class="card-year"><p>SS 1</p></div>
+                        <div class="card-duration"><p>EPS 5</p></div>
+                        <div class="card-type"><p>TV</p></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-wrapper">
+                <div class="top-card">
+                    <a href="https://hdtoday.tv/watch-tv/watch-the-12th-victim-hd-93328.9376171"><img src="https://m.media-amazon.com/images/M/MV5BNTA0NDJlNmMtZjgxMy00MzBmLWJmNzUtYmVhZmEwOGUxYTE1XkEyXkFqcGdeQXVyMTUyMTU1MDg1._V1_FMjpg_UX1000_.jpg" alt="The 12th Victim Documentary title picture"></a>
+                </div>
+                <div class="bottom-card">
+                    <div class="card-title-name">
+                        <h3>The 12th Victim</h3>
+                    </div>
+                    <div class="card-information">
+                        <div class="card-year"><p>SS 1</p></div>
+                        <div class="card-duration"><p>EPS 4</p></div>
+                        <div class="card-type"><p>TV</p></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-wrapper">
+                <div class="top-card">
+                    <a href="https://hdtoday.tv/watch-tv/watch-full-swing-hd-93247.9371488"><img src="https://m.media-amazon.com/images/M/MV5BOTk1YWRmODAtYzgyZi00Y2U0LTk1M2QtYzZmYzQ0NTY2MmUzXkEyXkFqcGdeQXVyMTEzMTI1Mjk3._V1_.jpg" alt="Full Swing Documentary title picture"></a>
+                </div>
+                <div class="bottom-card">
+                    <div class="card-title-name">
+                        <h3>Full Swing</h3>
+                    </div>
+                    <div class="card-information">
+                        <div class="card-year"><p>SS 1</p></div>
+                        <div class="card-duration"><p>EPS 8</p></div>
+                        <div class="card-type"><p>TV</p></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-wrapper">
+                <div class="top-card">
+                    <a href="https://hdtoday.tv/watch-tv/watch-still-missing-morgan-hd-93313.9374182"><img src="https://m.media-amazon.com/images/M/MV5BOGMxZjkxYjEtYjFkMi00MzdlLTlmYjktYWIxOWNkNzVmNmVlXkEyXkFqcGdeQXVyMjQzMjY5NjU@._V1_FMjpg_UX1000_.jpg" alt="Still Missing Morgan Documentary title picture"></a>
+                </div>
+                <div class="bottom-card">
+                    <div class="card-title-name">
+                        <h3>Still Missing Morgan</h3>
+                    </div>
+                    <div class="card-information">
+                        <div class="card-year"><p>SS 1</p></div>
+                        <div class="card-duration"><p>EPS 4</p></div>
+                        <div class="card-type"><p>TV</p></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-wrapper">
+                <div class="top-card">
+                    <a href="https://hdtoday.tv/watch-tv/watch-the-romantics-hd-93235.9368581"><img src="https://m.media-amazon.com/images/M/MV5BNDczYTI3NzktZGE5Ni00YzdiLWE1OTUtMjMyNGQ5ZWJjYWE3XkEyXkFqcGdeQXVyMTI1NDEyNTM5._V1_FMjpg_UX1000_.jpg" alt="The Romantics Documentary title picture"></a>
+                </div>
+                <div class="bottom-card">
+                    <div class="card-title-name">
+                        <h3>The Romantics</h3>
+                    </div>
+                    <div class="card-information">
+                        <div class="card-year"><p>SS 1</p></div>
+                        <div class="card-duration"><p>EPS 4</p></div>
+                        <div class="card-type"><p>TV</p></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-wrapper">
+                <div class="top-card">
+                    <a href="https://hdtoday.tv/watch-tv/watch-7-toughest-days-hd-93541.9394969"><img src="https://m.media-amazon.com/images/M/MV5BNDVmZTE5YmItZjA5My00ZjllLWFhOTMtOTlhMTQ3ZTE1NTNhXkEyXkFqcGdeQXVyMTQ5MDA1MzE0._V1_FMjpg_UX1000_.jpg" alt="7 Toughest Days Documentary title picture"></a>
+                </div>
+                <div class="bottom-card">
+                    <div class="card-title-name">
+                        <h3>7 Toughest Days</h3>
+                    </div>
+                    <div class="card-information">
+                        <div class="card-year"><p>SS 1</p></div>
+                        <div class="card-duration"><p>EPS 3</p></div>
+                        <div class="card-type"><p>TV</p></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-wrapper">
+                <div class="top-card">
+                    <a href="https://hdtoday.tv/watch-tv/watch-prisoner-of-the-prophet-hd-92785.9341047"><img src="https://m.media-amazon.com/images/M/MV5BNjYzYzU2ZDctZWRhNS00NTViLWIwODAtMDUzYzhhMTUwZmVjXkEyXkFqcGdeQXVyMjAwNzczNTU@._V1_.jpg" alt="Prisoner of the Prophet Documentary title picture"></a>
+                </div>
+                <div class="bottom-card">
+                    <div class="card-title-name">
+                        <h3>Prisoner of the Prophet</h3>
+                    </div>
+                    <div class="card-information">
+                        <div class="card-year"><p>SS 1</p></div>
+                        <div class="card-duration"><p>EPS 3</p></div>
+                        <div class="card-type"><p>TV</p></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h4>About Us</h4>
+                <p>We are dedicated to providing the best service.
+                  Whether you're looking to catch the latest blockbuster, an indie gem, or a classic re-release, we've got you covered.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Movies</a></li>
+                    <li><a href="cinemaProject2ndPage.html">Series</a></li>
+                    <li><a href="cinemaProject3rdPage.html">Documentaries</a></li>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="signup.html">Signup</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact Us</h4>
+                <p>Email: movielovers01@gmail.com</p>
+                <p>Phone: +91 9854782047 </p>
+                <p>22BECE30210 : Janmejay Pandya</p>
+                <p>22BECE30211 : Kuldip Pandya</p>
+                <p>22BECE30213 : Shaunak Pandya</p>
+            </div>
+            
+        </div>
+        <div class="footer-bottom">
+            
+            <p>&copy; 2024 Movie Lovers. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <script src="static\js\cinemaProject.js"></script>
+</body>
+</html>

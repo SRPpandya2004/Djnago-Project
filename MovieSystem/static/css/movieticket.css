@@ -1,0 +1,28 @@
+body{
+    
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-image: url(hederbg1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+
+.container
+{
+    background-color: #111111;
+}
+
+
+@media (hover:hover){   /* OVAJ QUERY CE SE PRIMENITI SAMO NA UREDJAJIMA KOJI IMAJU HOVER MOGUCNOST */
+    .container:hover {
+        width: 90%;
+        max-width: 500px;
+    border: 3px solid rgb(44, 228, 212);
+    box-shadow: -2px -5px 20px 13px rgba(44, 228, 212,0.45),
+    25px 0px 20px -20px rgba(44, 228, 212,0.45),
+    0px 25px 20px -20px rgba(44, 228, 212,0.45),
+    -25px 0px 20px -20px rgba(44, 228, 212,0.45);
+
+
+}
+}

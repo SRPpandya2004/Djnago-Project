@@ -1,0 +1,82 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Movie Lovers</title>
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <img src="{% static 'images/logonew1 white.png' %}" alt="Website Logo">
+        </div>
+        <div class="form-container">
+            <h2>Sign Up</h2>
+            <form method="POST" id="signupForm">
+                {% csrf_token %}
+                <label for="fullName">Full Name:</label>
+                <input type="text" id="fullName" name="fullName" required>
+                
+                <label for="contact">Contact Number:</label>
+                <input type="tel" id="contact" name="contact" required>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="username">Create Username:</label>
+                <input type="text" id="username" name="username" required>
+                
+                <label for="createPassword">Create Password:</label>
+                <input type="password" id="createPassword" name="password" required>
+                
+                <button type="submit">Sign Up</button>
+            </form>
+            <p>Already have an account? <a href="{% url 'login' %}">Login</a></p>
+        </div>
+    </div>
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>
+
+
+
+{% comment %} <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Movie Lovers</title>
+    <link rel="stylesheet" href="static\css\login.css">
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <img src="static\images\logonew1 white.png" alt="Website Logo">
+        </div>
+        <div class="form-container">
+            <h2>Sign Up</h2>
+            <form id="signupForm">
+                <label for="fullName">Full Name:</label>
+                <input type="text" id="fullName" name="fullName" required>
+                
+                <label for="contact">Contact Number:</label>
+                <input type="tel" id="contact" name="contact" required>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="username">Create Username:</label>
+                <input type="text" id="username" name="Username" required>
+                
+                <label for="createPassword">Create Password:</label>
+                <input type="password" id="createPassword" name="createPassword" required>
+                
+                <button type="submit">Sign Up</button>
+            </form>
+            <p>Already have an account? <a href="{% url 'login' %}">Login</a></p>
+        </div>
+    </div>
+    <script src="static\js\script.js"></script>
+</body>
+</html> {% endcomment %}

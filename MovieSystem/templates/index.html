@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Lovers</title>
+
+
+    <link rel="stylesheet" href="static\css\cinemaProject.css">
+    <link rel="stylesheet" href="static\css\footer.css">
+
+    <link rel="shortcut icon" href="static\images\hederbg1.jpg" type="image/x-icon">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Roboto:wght@300;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="nav-bar">
+            <div class="company-title-div">
+                <span class="outter"><a href="index.html"><img src="static\images\logonew1 black.png" alt="company name logo" class="title-logo"></a></span>
+            </div>
+
+            <span class="hamburger-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </span>
+
+            <div class="navigation-links-div">
+                <ul>
+                    <li><a href="{% url 'home' %}">Movies</a></li>
+                    <li><a href="{% url 'series' %}">Series</a></li>
+                    <li><a href="{% url 'documentery' %}">Documentaries</a></li>
+                    {% if user.is_authenticated %}
+                    <li>
+                        <!-- Hidden form that will handle the POST logout -->
+                        <form id="logout-form" action="{% url 'logout' %}" method="post" style="display: none;">
+                            {% csrf_token %}
+                        </form>
+                        <!-- A text link that triggers the form submission via JavaScript -->
+                        <a href="#" onclick="if(confirm('Are you sure you want to sign out?')) { document.getElementById('logout-form').submit(); } return false;">
+                            Signout
+                        </a>
+                    </li>
+                {% endif %}
+                </ul>
+                    
+                    
+                    {% comment %} {% if user.is_authenticated %}
+                        <li>
+                            <form id="logout-form" action="{% url 'logout' %}" method="post" style="display:inline;">
+                                {% csrf_token %}
+                                <button type="submit" onclick="return confirm('Are you sure you want to sign out?');">
+                                    Signout
+                                </button>
+                            </form>
+                        </li>
+                    {% endif %} {% endcomment %}
+            
+            </div>
+        </nav>
+    </header>
+
+    <section class="first-section" id="firstSectionID">
+
+        <div class="first-section-div">
+            <div class="card-wrapper" >
+                <div class="top-card">
+                        <a href="movieticket.html"><img src="static\images\i Joker.jpg" alt="Joker: Folie à Deux"></a>
+                </div>
+                <div class="bottom-card" onclick="window.location.href='movieticket.html'">
+                    <div class="card-title-name">
+                        <h3>Joker: Folie à Deux</h3>
+                    </div>
+                    <div class="card-information">
+                        <div class="card-year"><p>2024</p></div>
+                        <div class="card-duration"><p>165m</p></div>
+                        <div class="card-type"><p>Crime/Drama</p></div>
+                    </div>
+                </div>        
+            </div>
+
+            <div class="card-wrapper" >
+                <div class="top-card">
+                        <a href="movieticket.html"><img src="static\images\i stree2.jpg" alt="Stree 2"></a>
+                </div>
+                <div class="bottom-card" onclick="window.location.href='movieticket.html'">
+                    <div class="card-title-name">
+                        <h3>Stree 2</h3>
+                    </div>
+                    <div class="card-information">
+                        <div class="card-year"><p>2024</p></div>
+                        <div class="card-duration"><p>140m</p></div>
+                        <div class="card-type"><p>Horro/Comedy</p></div>
+                    </div>
+                </div>        
+            </div>
+
+            <div class="card-wrapper" >
+                <div class="top-card">
+                        <a href="movieticket.html"><img src="static\images\i Fakt Purusho Maate.jpg" alt="Fakt Purusho Maate"></a>
+                </div>
+                <div class="bottom-card" onclick="window.location.href='movieticket.html'">
+                    <div class="card-title-name">
+                        <h3>Fakt Purusho Maate</h3>
+                    </div>
+                    <div class="card-information">
+                        <div class="card-year"><p>2024</p></div>
+                        <div class="card-duration"><p>125m</p></div>
+                        <div class="card-type"><p>Comedy</p></div>
+                    </div>
+                </div>        
+            </div>
+
+            <div class="card-wrapper" >
+                <div class="top-card">
+                        <a href="movieticket.html"><img src="static\images\i The Greatest of All Time.jpg" alt="The Greatest of All Time"></a>
+                </div>
+                <div class="bottom-card" onclick="window.location.href='movieticket.html'">
+                    <div class="card-title-name">
+                        <h3>The Greatest of All Time</h3>
+                    </div>
+                    <div class="card-information">
+                        <div class="card-year"><p>2024</p></div>
+                        <div class="card-duration"><p>180m</p></div>
+                        <div class="card-type"><p>Action/Drama</p></div>
+                    </div>
+                </div>        
+            </div>
+
+            <div class="card-wrapper" >
+                <div class="top-card">
+                        <a href="movieticket.html"><img src="static\images\i Udan Chhoo.jpg" alt="Udan Chhoo"></a>
+                </div>
+                <div class="bottom-card" onclick="window.location.href='movieticket.html'">
+                    <div class="card-title-name">
+                        <h3>Udan Chhoo</h3>
+                    </div>
+                    <div class="card-information">
+                        <div class="card-year"><p>2024</p></div>
+                        <div class="card-duration"><p>132m</p></div>
+                        <div class="card-type"><p>Comedy</p></div>
+                    </div>
+                </div>        
+            </div>
+
+            <div class="card-wrapper" >
+                <div class="top-card">
+                        <a href="movieticket.html"><img src="static\images\i Tumbbad.jpg" alt="Tumbbad"></a>
+                </div>
+                <div class="bottom-card" onclick="window.location.href='movieticket.html'">
+                    <div class="card-title-name">
+                        <h3>Tumbbad</h3>
+                    </div>
+                    <div class="card-information">
+                        <div class="card-year"><p>2018</p></div>
+                        <div class="card-duration"><p>178m</p></div>
+                        <div class="card-type"><p>Drama</p></div>
+                    </div>
+                </div>        
+            </div>
+
+            <div class="card-wrapper" >
+                <div class="top-card">
+                        <a href="movieticket.html"><img src="static\images\i Frendo.jpg" alt="Frendo"></a>
+                </div>
+                <div class="bottom-card" onclick="window.location.href='movieticket.html'">
+                    <div class="card-title-name">
+                        <h3>Frendo</h3>
+                    </div>
+                    <div class="card-information">
+                        <div class="card-year"><p>2024</p></div>
+                        <div class="card-duration"><p>135m</p></div>
+                        <div class="card-type"><p>Comedy</p></div>
+                    </div>
+                </div>        
+            </div>
+
+            <div class="card-wrapper" >
+                <div class="top-card">
+                        <a href="movieticket.html"><img src="https://image.tmdb.org/t/p/w500/A3ZbZsmsvNGdprRi2lKgGEeVLEH.jpg" alt="Shazam Fury of The Gods picture"></a>
+                </div>
+                <div class="bottom-card" onclick="window.location.href='movieticket.html'">
+                    <div class="card-title-name">
+                        <h3>Shazam! Fury of the Gods</h3>
+                    </div>
+                    <div class="card-information">
+                        <div class="card-year"><p>2023</p></div>
+                        <div class="card-duration"><p>130m</p></div>
+                        <div class="card-type"><p>Movie</p></div>
+                    </div>
+                </div>        
+            </div>
+
+            <div class="card-wrapper" >
+                <div class="top-card">
+                        <a href="movieticket.html"><img src="static\images\i Kahan Shuru Kahan Khatam.jpg" alt="Kahan Shuru Kahan Khatam"></a>
+                </div>
+                <div class="bottom-card" onclick="window.location.href='movieticket.html'">
+                    <div class="card-title-name">
+                        <h3>Kahan Shuru Kahan Khatam</h3>
+                    </div>
+                    <div class="card-information">
+                        <div class="card-year"><p>2024</p></div>
+                        <div class="card-duration"><p>124m</p></div>
+                        <div class="card-type"><p>Romance</p></div>
+                    </div>
+                </div>        
+            </div>
+
+            <div class="card-wrapper">
+                <div class="top-card">
+                    <a href="https://hdtoday.tv/watch-tv/watch-rabbit-hole-hd-94465.9525340"><img src="https://image.tmdb.org/t/p/original/uF2kq6ou9yVQhHNjXpx1vnZ01oL.jpg" alt="TV show title picture"></a>
+                </div>
+                <div class="bottom-card">
+                    <div class="card-title-name">
+                        <h3>Rabbit Hole</h3>
+                    </div>
+                    <div class="card-information">
+                        <div class="card-year"><p>2024</p></div>
+                        <div class="card-duration"><p>135m</p></div>
+                        <div class="card-type"><p>Movie</p></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-wrapper">
+                <div class="top-card">
+                    <a href="https://hdtoday.tv/watch-tv/watch-the-last-of-us-hd-92254.9430558"><img src="https://m.media-amazon.com/images/M/MV5BZGUzYTI3M2EtZmM0Yy00NGUyLWI4ODEtN2Q3ZGJlYzhhZjU3XkEyXkFqcGdeQXVyNTM0OTY1OQ@@._V1_FMjpg_UX1000_.jpg" alt="TV show title picture"></a>
+                </div>
+                <div class="bottom-card">
+                    <div class="card-title-name">
+                        <h3>The Last of Us</h3>
+                    </div>
+                    <div class="card-information">
+                        <div class="card-year"><p>2024</p></div>
+                        <div class="card-duration"><p>150m</p></div>
+                        <div class="card-type"><p>Movie</p></div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="card-wrapper">
+                <div class="top-card">
+                    <a href="https://hdtoday.tv/watch-tv/watch-the-signing-hd-95113.9528949"><img src="https://m.media-amazon.com/images/M/MV5BMGNkMmFkZDEtNTg3MC00YmRhLWE4ZmYtN2U4YTYwNWQwZDgxXkEyXkFqcGdeQXVyMTUyNjc3NDQ4._V1_FMjpg_UX1000_.jpg" alt="The Signing TV show title picture"></a>
+                </div>
+                <div class="bottom-card">
+                    <div class="card-title-name">
+                        <h3>The Signing</h3>
+                    </div>
+                    <div class="card-information">
+                        <div class="card-year"><p>2024</p></div>
+                        <div class="card-duration"><p>125m</p></div>
+                        <div class="card-type"><p>Movie</p></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-wrapper">
+                <div class="top-card">
+                    <a href="https://hdtoday.tv/watch-tv/watch-fena-pirate-princess-hd-95083.9532993"><img src="https://m.media-amazon.com/images/M/MV5BZTM4ZTA3NTgtYTU2ZC00MDkxLTg4YTUtMjI2YmE4NmM3MzFhXkEyXkFqcGdeQXVyNjc3MjQzNTI@._V1_.jpg" alt="Fena: Pirate Princess TV show title picture"></a>
+                </div>
+                <div class="bottom-card">
+                    <div class="card-title-name">
+                        <h3>Fena: Pirate Princess</h3>
+                    </div>
+                    <div class="card-information">
+                        <div class="card-year"><p>2024</p></div>
+                        <div class="card-duration"><p>130m</p></div>
+                        <div class="card-type"><p>Movie</p></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-wrapper">
+                <div class="top-card">
+                    <a href="https://hdtoday.tv/watch-tv/watch-jury-duty-hd-94987.9520657"><img src="https://m.media-amazon.com/images/M/MV5BOGI4NjI2YzMtMWYzNS00OTI4LTkwM2MtZTEzNDU2MDhhNTY0XkEyXkFqcGdeQXVyMTQzNTA5MzYz._V1_UY1200_CR85,0,630,1200_AL_.jpg" alt="Jury Duty TV show title picture"></a>
+                </div>
+                <div class="bottom-card">
+                    <div class="card-title-name">
+                        <h3>Jury Duty</h3>
+                    </div>
+                    <div class="card-information">
+                        <div class="card-year"><p>2024</p></div>
+                        <div class="card-duration"><p>140m</p></div>
+                        <div class="card-type"><p>Movie</p></div>
+                    </div>
+                </div>
+            </div>
+
+     
+    </section>
+    
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h4>About Us</h4>
+                <p>We are dedicated to providing the best service.
+                  Whether you're looking to catch the latest blockbuster, an indie gem, or a classic re-release, we've got you covered.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Movies</a></li>
+                    <li><a href="cinemaProject2ndPage.html">Series</a></li>
+                    <li><a href="cinemaProject3rdPage.html">Documentaries</a></li>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="signup.html">Signup</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact Us</h4>
+                <p>Email: movielovers01@gmail.com</p>
+                <p>Phone: +91 9854782047 </p>
+                <p>22BECE30210 : Janmejay Pandya</p>
+                <p>22BECE30211 : Kuldip Pandya</p>
+                <p>22BECE30213 : Shaunak Pandya</p>
+            </div>
+            
+        </div>
+        <div class="footer-bottom">
+            
+            <p>&copy; 2024 Movie Lovers. All rights reserved.</p>
+        </div>
+    </footer>
+    
+
+    <script src="static\js\cinemaProject.js"></script>
+</body>
+</html>

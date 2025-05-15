@@ -1,0 +1,417 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-family: Roboto, Arial;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+   
+}
+
+p {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+
+    -webkit-tap-highlight-color: transparent !important ;
+}
+
+    .nav-bar {
+        display: flex;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 6.3rem;
+        
+
+        background-image: url(hederbg1.jpg);
+        background-size: cover;
+        background-position: top;
+    }
+
+        .company-title-div, .navigation-links-div {
+            width: 50%;
+            height: 100%;
+    
+        }
+
+        .company-title-div {
+            display: flex;
+            align-items: center;
+            font-size: 1.5rem;
+            padding-left: 2.7rem;
+            padding-top: 1rem;
+        
+
+        }
+
+        .company-title-div .outter {
+            height: 100%;
+        }
+        
+
+        .title-logo  {
+            height: 80%;
+        }
+
+        .navigation-links-div {
+            padding-right: 3rem;
+
+        }
+
+            .navigation-links-div ul {
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-end;
+                font-size: 1.5rem;
+                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                list-style: none;
+                
+                gap: 8rem;
+                padding-top: 0.8rem;
+            }
+
+            .navigation-links-div a {
+                transition: color 0.3s;
+                color: #120507;
+                font-weight: 800;
+            }
+
+            .navigation-links-div a:hover {
+                
+                border: 3px solid rgb(44, 228, 212);
+                box-shadow: -2px -5px 20px 13px rgba(44, 228, 212,0.45),
+                25px 0px 20px -20px rgba(44, 228, 212,0.45),
+                0px 25px 20px -20px rgba(44, 228, 212,0.45),
+                -25px 0px 20px -20px rgba(44, 228, 212,0.45);
+            }
+
+/*                   HAMBURGER MENU                 */
+
+
+        .hamburger-menu {
+            position: absolute;
+            top: 2.3rem;
+            right: 2.2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            display: none;
+
+            height: 21px;
+            width: 30px;
+        }
+
+            .bar {
+                height: 3px;
+                width: 100%;
+
+                background-color: white;
+            }
+
+
+/*                     CONTENT                         */
+
+
+
+        .first-section-div {
+            height: 100%;
+            
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+            place-items: center center;  /* CSS SHORTHAND, SUPER STVAR, RADI I JUSTIFY I ALIGN U ISTO VREME (JEDNA VREDNOST JE JUSTIFY, JEDNA ALIGN) */
+            gap: 3rem;
+            padding-top: 9rem;
+
+            background-color: #120507;
+        }
+
+            .card-wrapper {
+                display: flex;
+                flex-direction: column;
+                height: 20.659rem;
+                width: 12rem;
+                border-radius: 0.7rem;
+                background-color: white;
+                transition: height 0.5s, width 0.5s ease-out;
+            }
+
+            @media (hover:hover){   /* OVAJ QUERY CE SE PRIMENITI SAMO NA UREDJAJIMA KOJI IMAJU HOVER MOGUCNOST */
+                .card-wrapper:hover {
+                height: 26rem;
+                width: 20rem;
+                border: 3px solid rgb(44, 228, 212);
+                box-shadow: -2px -5px 20px 13px rgba(44, 228, 212,0.45),
+                25px 0px 20px -20px rgba(44, 228, 212,0.45),
+                0px 25px 20px -20px rgba(44, 228, 212,0.45),
+                -25px 0px 20px -20px rgba(44, 228, 212,0.45);
+
+
+            }
+        }
+
+            
+
+
+            .card-wrapper a{
+                padding: 0;
+                margin: 0;
+            }
+    
+                .top-card {
+                    height: 80%;
+                    width: 100%;
+                }
+    
+                    .top-card img {
+                        height: 100%;
+                        width: 100%;
+                        object-fit: cover;
+    
+                        border-radius: 0.7rem;
+                    }
+
+    
+                .bottom-card {
+                    display: flex;
+                    flex-direction: column;
+    
+                    height: 20%;
+                    width: 100%;
+                }
+    
+                    .card-title-name, .card-information {
+                        width: 100%;
+                        height: 50%;
+                    }
+    
+                    .card-title-name {
+                        display: flex;
+                        align-items: center;
+    
+                        padding-left: 0.4rem;
+                    }
+    
+                        .card-title-name h3 {
+                            font-weight: 500;
+                            font-size: 1rem;
+                            margin: 0;
+                            padding: 0;
+                        }
+
+                            .s-class{
+                                color: red;
+                            }
+
+                            .r-class {
+                                color: rgb(38, 38, 255);
+                            }
+    
+                    .card-information {
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        padding-left: 0.4rem;
+                        
+                    }
+    
+                    .card-information p {
+                        color: rgb(196, 35, 35);
+                        font-size: 13.3px;
+                        white-space: nowrap;
+                    }
+    
+                        .card-year {
+                            width: 25%;
+                        }
+    
+                        .card-duration {
+                            width: 25%;
+                        }
+    
+                        .card-type {
+                            width: 50%;
+    
+                            display: flex;
+                            justify-content: flex-end;
+    
+                            padding-right: 1rem;
+                        }
+
+
+/*               MEDIA QUERY ZA RESPONSIVE             */
+
+
+@media (max-width: 600px) {
+
+    .nav-bar {
+        height: auto;
+        flex-direction: column;
+    }
+
+        .company-title-div, .navigation-links-div {
+            width: 100%;
+        }
+
+        .company-title-div {
+            padding-left: 1rem;
+            padding-top: 0.8rem;
+            padding-bottom: 0.8rem;
+
+            font-size: 1.2rem;
+        }
+
+        .company-title-div .outter {
+            height: 100%;
+        }
+        
+
+            .title-logo  {
+                height: 100%;
+                width: 50%;
+            }
+
+        .navigation-links-div {
+            display: none;
+            padding-right: 0;
+        }
+
+        .navigation-links-div.active {
+            display: flex;
+            justify-content: center;
+            padding-right: 2.2rem;
+        }
+
+        .navigation-links-div ul{
+            flex-direction: column;
+            gap: 0;
+            padding-top: 0;
+            text-align: center;
+        }
+
+        .navigation-links-div li {
+            padding-top: 1rem;
+        }
+
+        .hamburger-menu {
+            display: flex;
+        }
+
+
+
+/*                     CONTENT                         */
+
+    .first-section-div {
+        height: 100%;
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.3rem;
+        padding-bottom: 1rem;
+        padding-top: 6.8rem;
+
+        background-color: white;
+    }
+
+        .card-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 24.659rem;
+            width: 10.4rem;
+            
+
+            border-radius: 0.7rem;
+            background-color: white;
+        }
+
+        .card-wrapper a{
+            padding: 0;
+            margin: 0;
+        }
+
+            .top-card {
+                height: 70%;
+                width: 100%;
+            }
+
+                .top-card img {
+                    height: 100%;
+                    width: 100%;
+                    object-fit: cover;
+
+                    border-radius: 0.7rem;
+                }
+
+            .bottom-card {
+                display: flex;
+                flex-direction: column;
+
+                height: 30%;
+                width: 100%;
+            }
+
+                .card-title-name, .card-information {
+                    width: 100%;
+                    height: 50%;
+                }
+
+                .card-title-name {
+                    display: flex;
+                    align-items: center;
+
+                    padding-left: 0.4rem;
+                }
+
+                    .card-title-name h3 {
+                        font-weight: 500;
+                        font-size: 1rem;
+                        margin: 0;
+                        padding: 0;
+                    }
+
+                .card-information {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    padding-left: 0.4rem;
+                    
+                }
+
+                .card-information p {
+                    color: gray;
+                    font-size: 13.3px;
+                    white-space: nowrap;
+                }
+
+                    .card-year {
+                        width: 25%;
+                    }
+
+                    .card-duration {
+                        width: 25%;
+                    }
+
+                    .card-type {
+                        width: 50%;
+
+                        display: flex;
+                        justify-content: flex-end;
+
+                        padding-right: 1rem;
+                    }
+
+    }

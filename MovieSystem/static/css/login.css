@@ -1,0 +1,88 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url(hederbg1.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #fff;
+}
+.container {
+    width: 90%;
+    max-width: 500px;
+    /*background-color: white;*/
+    background-color: #120507;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+
+    box-shadow: -2px -5px 20px 13px rgba(134, 126, 126, 0.45),
+                25px 0px 20px -20px rgba(121, 121, 121, 0.45),
+                0px 25px 20px -20px rgba(108, 109, 109, 0.45),
+                -25px 0px 20px -20px rgba(153, 157, 157, 0.45);
+}
+
+@media (hover:hover){   /* OVAJ QUERY CE SE PRIMENITI SAMO NA UREDJAJIMA KOJI IMAJU HOVER MOGUCNOST */
+    .container:hover {
+        width: 90%;
+        max-width: 500px;
+    border: 3px solid rgb(44, 228, 212);
+    box-shadow: -2px -5px 20px 13px rgba(44, 228, 212,0.45),
+    25px 0px 20px -20px rgba(44, 228, 212,0.45),
+    0px 25px 20px -20px rgba(44, 228, 212,0.45),
+    -25px 0px 20px -20px rgba(44, 228, 212,0.45);
+
+
+}
+}
+
+
+.logo img {
+    width: 250px;
+    margin-bottom: 8px;
+}
+.form-container {
+    display: flex;
+    flex-direction: column;
+}
+h2 {
+    margin-bottom: 20px;
+}
+label {
+    text-align: left;
+    margin-top: 10px;
+}
+input {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+button {
+    padding: 10px;
+    background-color: #007bff;
+    color: rgb(255, 255, 255);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #0056b3;
+}
+p {
+    margin-top: 20px;
+}
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
