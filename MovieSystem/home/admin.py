@@ -2,7 +2,7 @@
 
 from django.contrib import admin
 from .models import User
-
+#this is not change by me 
 # admin.site.site_header = "Movie booking System"
 # admin.site.site_title = "Movie system"
 # admin.site.index_title = "Site of Movie System"
